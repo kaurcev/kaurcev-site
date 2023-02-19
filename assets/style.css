@@ -279,10 +279,10 @@ footer {
 }
 
 .cboard {
-    background-image: url(https://mini.s-shot.ru/1280x1768/1000/png/?https://beta.kaurcev.tk/board);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-clip: content-box;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://mini.s-shot.ru/1280x1768/1000/png/?https://beta.kaurcev.tk/board);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 }
 
