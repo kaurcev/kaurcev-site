@@ -20,19 +20,22 @@ $.ajax({
 });
 
 var UI = {
-        loader: document.getElementById('loading_ban'),
-        imagepan: document.getElementById('imageopens'),
-        imagesrc: document.getElementById('imagesrc'),
-        imagealt: document.getElementById('imagealt'),
-    }
+    loader: document.getElementById('loading_ban'),
+    imagepan: document.getElementById('imageopens'),
+    imagesrc: document.getElementById('imagesrc'),
+    imagealt: document.getElementById('imagealt'),
+}
+
+function onloading() {
+    UI.loader.remove();
     /*
-    function onloading() {
-        UI.loader.remove();
         document.getElementsByTagName('img')[3].addEventListener('click', function(event) {
-            imageopen(this.src, this.alt)
-        });
-    }
+        imageopen(this.src, this.alt)
+    });
     */
+
+}
+
 function imageopen(src, alt) {
     UI.imagepan.style.display = 'flex';
     UI.imagesrc.src = src;
