@@ -7,10 +7,9 @@
 
 <div align="center">
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/kaurcev/kaurcev-site?style=flat-square)](https://github.com/kaurcev/kaurcev-site/issues)
 [![GitHub Pull Requests](https://img.shields.io/discord/888102048413937684?style=flat-square)](https://img.shields.io/discord/888102048413937684?style=flat-square)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![Size](https://img.shields.io/github/languages/code-size/kaurcev/kaurcev-site?style=flat-square)](https://github.com/kaurcev/kaurcev-site/archive/refs/heads/main.zip)
 
 </div>
 
@@ -20,7 +19,7 @@
     <br> 
 </p>
 
-## 🧐 About <a name = "about"></a>
+## 🧐 О проекте <a name = "about"></a>
 
 Это репозиторий моего личного сайта :)
  
