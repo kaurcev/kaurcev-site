@@ -43,7 +43,7 @@
 
 ## ⛏️ Работа сайта <a name = "built_using"></a>
 
-- [Netlify](https://www.mongodb.com/) - Хостинг
+- [Netlify](https://www.netlify.com/) - Хостинг
 - [Firebase](https://firebase.google.com/) - Поставщик облачных услуг
 - [Яндекс.Метрика](https://metrika.yandex.ru/) - Сервис веб-аналитики
 - [Яндекс.Вебмастер](https://webmaster.yandex.ru/) - Сервис для вебмастеров
