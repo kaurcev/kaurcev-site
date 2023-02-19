@@ -9,7 +9,7 @@
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/kaurcev/kaurcev-site?style=flat-square)](https://github.com/kaurcev/kaurcev-site/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+[![GitHub Pull Requests](https://img.shields.io/discord/888102048413937684?style=flat-square)](https://img.shields.io/discord/888102048413937684?style=flat-square)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
