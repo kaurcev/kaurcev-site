@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru_RU">
 
 <head>
     <meta charset="UTF-8">
@@ -57,7 +57,20 @@
                 <button class="button cookie_accept btn btn-primary btn-sm">Я согласен</button></div>
             <p class="mini">kaurcev.tk | <span id="f_country"></span></p>
         </div>
+    </div>
+    <div id="assist" onclick="speech()"><i class="fa fa-microphone" aria-hidden="true"></i></div>
+    <div id="assistpan">
+        <div class="panel">
+            <div id="voise">
+                <div class="panel centered">
+                    <h2 id="texted"></h2>
+                    <p class="mini">Говорите, ассистент обрабатывает ваш голос </p>
+                    <button onclick="stop()">Остановить</button>
+                </div>
 
+            </div>
+
+        </div>
     </div>
 
     <div id="loading_ban">
@@ -81,6 +94,13 @@
             <p>На мой личный сайт</p>
         </div>
         <h2>Обо мне</h2>
+
+
+
+        <p>Начните пользоваться :)<br><br>Вы можете сделать скриншот сайта с помощью:<br>/screen {Ссылка на любой сайт}<br><br>На данный момент ведется разработка и внедрение приложения на сайт.<br><br>Уже внедрен голосовой ввод, так же поиск по запросу.<br><br>Пример:<br>Что
+            такое {Ваш запрос}<br><br>Свои рекомендации можете предлагать в мой телеграм:<br><a target="_blank" href="https://kaurcev.t.me">Написать мне</a></p>
+
+
         <div class="duo">
             <div>
                 <img src="/assets/img/da.jpg">
@@ -120,7 +140,7 @@
         </script>
     </main>
     <footer>
-        <p> kaurcev.tk | <span id="f_country"></span> 2019-<span id="f_year"></span></p>
+        <p> kaurcev.tk | <span id="country"></span> | 2019-<span id="f_year"></span></p>
     </footer>
     <script>
         (function(m, e, t, r, i, k, a) {
@@ -158,6 +178,7 @@
         (document, screen)
     </script>
     <script src="/assets/code.js"></script>
+    <script src="/assets/voise.js"></script>
 </body>
 
 </html>

@@ -9,9 +9,8 @@ $.ajax({
     success: function(data) {
         var region = data.region;
         var country = data.country;
-
         var ip = data.ip;
-        document.getElementById('f_country').innerHTML = country;
+        document.getElementById('country').innerHTML = country + " (" + region + ")";
         switch (ip) {
             case "1.1.1.1":
                 eval('<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">Бан на IP ' + ip);
