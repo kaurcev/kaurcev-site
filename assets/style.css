@@ -63,7 +63,7 @@
     --cookie_note: #21212160;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme:dark) {
      :root {
         --color-fg: #fefff5;
         --color-body-bg: #202020;
@@ -305,7 +305,7 @@ img {
 
 .duo .cart:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 10px 0 pink;
+    box-shadow: 0 10px 10px 10px var(--color-body-bg);
 }
 
 @media (max-width: 500px) {
