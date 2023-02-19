@@ -1,0 +1,47 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+<IfModule mod_php5.c>
+
+	# Устанавливаем кодировку UTF-8
+	AddDefaultCharset	UTF-8
+
+</IfModule>
+
+<IfModule mod_php7.c>
+
+	# Устанавливаем кодировку UTF-8
+	AddDefaultCharset	UTF-8
+
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+	# Перенаправляем с HTTP на HTTPS
+	SetEnvIf X-HTTPS 1 HTTPS
+	RewriteBase /
+	RewriteCond %{HTTP:X-HTTPS} !1
+	RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+	# 301 редирект с одного домена на другой
+	RewriteRule (.*) http://beta.kaurcev.tk$1 [R=301,L]
+
+	# Убираем лишние слеши на конце URL
+	RewriteCond %{THE_REQUEST} //
+	RewriteRule ^(.*)$ https://%{HTTP_HOST}/$0 [R=301,L]
+
+	# Убираем index.php на конце
+	RewriteCond %{REQUEST_URI} ^(.*)/index\.php$
+	RewriteRule ^(.*)index\.php$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+	# Убираем index.html на конце
+	RewriteCond %{REQUEST_URI} ^(.*)/index\.html$
+	RewriteRule ^(.*)index\.html$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+	# Страницы пользовательских ошибок
+	ErrorDocument 400 /400.html
+	ErrorDocument 401 /401.html
+	ErrorDocument 403 /403.html
+	ErrorDocument 404 /404.html
+
+</IfModule>
