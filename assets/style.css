@@ -1,0 +1,315 @@
+@font-face {
+    font-family: "Raleway-Medium";
+    src: url("/fonts/Raleway-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Raleway-Light";
+    src: url("/fonts/Raleway-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Raleway-Black";
+    src: url("/fonts/Raleway-Black.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Raleway-SemiBold";
+    src: url("/fonts/Raleway-SemiBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Raleway-ExtraBold";
+    src: url("/fonts/Raleway-ExtraBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Raleway-Bold";
+    src: url("/fonts/Raleway-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Raleway-Regular";
+    src: url("/fonts/Raleway-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Raleway-Light";
+    src: url("/fonts/Raleway-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+:root {
+    --color-fg: #212121;
+    --color-body-bg: #f2f4f8;
+    --img-logo: saturate(1);
+    --header-color: #ffffff;
+    --loader-color: #f2f4f8f3;
+    --cookie_note: #21212160;
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --color-fg: #fefff5;
+        --color-body-bg: #202020;
+        --img-logo: saturate(0.3);
+        --header-color: #303030;
+        --loader-color: #303030f3;
+        --cookie_note: #21212160;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: var(--color-body-bg);
+    color: var(--color-fg);
+    font-family: "Raleway-Medium";
+    margin: 0px;
+    padding: 20px 4px 4px 4px;
+    font-size: 16px;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    width: 100%;
+    background-color: var(--header-color);
+    z-index: 5;
+}
+
+.header {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.header img#logo {
+    height: 30px;
+}
+
+nav {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    font-size: 90%;
+}
+
+#loading_ban {
+    position: fixed;
+    background-color: var(--loader-color);
+    backdrop-filter: blur(4px);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+#loading_ban .logo {
+    width: 30%;
+    max-width: 50px;
+    -webkit-filter: var( --img-logo)
+}
+
+main {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1280px;
+    min-height: 90vh;
+}
+
+button {
+    background-color: #1cacff;
+    border: 1px solid #1cacff;
+    border-radius: 6px;
+    font-size: 16px;
+    min-width: 100px;
+    font-weight: 800;
+    padding: 5px 10px 5px 10px;
+    font-family: "Raleway-SemiBold";
+    color: var(--color-fg);
+}
+
+button:active {
+    background-color: #1894db;
+    border: 1px solid#1894db;
+    color: var(--color-fg);
+}
+
+#cookie_note.show {
+    display: flex;
+}
+
+#cookie_note {
+    display: none;
+    position: fixed;
+    background-color: var(--cookie_note);
+    backdrop-filter: blur(4px);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+#cookie_note .panel {
+    display: flex;
+    background-color: var(--header-color);
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 10px 0 #21212150;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.mini {
+    font-family: "Raleway-Light";
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+footer {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1280px;
+}
+
+.hello {
+    background: linear-gradient(to top left, powderblue, pink);
+    color: #212121;
+    height: 40vh;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    min-height: 400px;
+}
+
+.hello h1,
+.hello p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.duo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.duo .cart {
+    background: linear-gradient(45deg, #1cacff, #C5DDE8);
+    padding: 10px;
+    border-radius: 20px;
+    height: 250px;
+    width: 100%;
+    max-width: 400px;
+    margin: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.revert {
+    flex-wrap: wrap-reverse;
+}
+
+.duo div {
+    width: 100%;
+    max-width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.duo div img {
+    width: 100%;
+    max-width: 400px;
+}
+
+.duo .cart:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 500px) {
+    .hello {
+        background-color: #1cacff;
+        height: 60vh;
+        width: 100%;
+        border-radius: 10px;
+        position: inherit;
+        top: 100px;
+        left: 0px;
+        margin: 0px;
+        justify-content: center;
+    }
+    .duo div {
+        width: 100%;
+        max-width: none;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
