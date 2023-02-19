@@ -31,6 +31,7 @@ function assiststart() {
 
     } catch (error) {
         document.getElementById('texted').innerHTML = "Ассистент не поддерживается";
+        document.getElementById('adds').style.display = 'none'
         document.getElementById('assistpan').style.display = 'flex'
         setTimeout(() => { endspeack(); }, 5000);
     }
