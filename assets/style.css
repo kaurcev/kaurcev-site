@@ -278,6 +278,14 @@ footer {
     color: var(--color-fg);
 }
 
+.cboard {
+    background-image: url(https://mini.s-shot.ru/1920x1080/1080/png/?https://beta.kaurcev.tk/board);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: content-box;
+    background-size: cover;
+}
+
 .revert {
     flex-wrap: wrap-reverse;
 }
