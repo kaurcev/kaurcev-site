@@ -16,95 +16,46 @@
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> Подробности проекта
     <br> 
 </p>
 
-## 📝 Table of Contents
-
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
-
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
-
-## 🏁 Getting Started <a name = "getting_started"></a>
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests">kaurcev.tk</a>
+Это репозиторий моего личного сайта :)
+ 
+## 🔧 Начало тестирования <a name = "tests">kaurcev.tk</a>
 
 Все тестовые функции выпускаются исключительно на beta.kaurcev.tk.
 Так же и ваши предложения реализовываются там, а после дискуссирования, мы публикуем изменнения.
 
-### Начало тестирования
 
-Explain what these tests test and why
+## 🎈 Использование для сторонних разработчиков <a name="usage"></a>
 
-```
-https://beta.kaurcev.tk
-```
+На сайте будут публиковаться различные функции, которые вы сможете использоватьт в своих проектах ;)
 
-### Тестирование виджетов
+## 🚀 Развёртывание <a name = "deployment"></a>
 
-Explain what these tests test and why
+Чтобы получить дополнительный функционал на своем web прниложении, необходимо прописать вот этот код:
 
 ```
-Give an example
+<script src="//dev.kaurcev.tk/plagins.js">
 ```
 
-## 🎈 Usage <a name="usage"></a>
-
-Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
-
-## ⛏️ Built Using <a name = "built_using"></a>
+## ⛏️ Работа сайта <a name = "built_using"></a>
 
 - [Netlify](https://www.mongodb.com/) - Хостинг
+- [Firebase](https://firebase.google.com/) - Поставщик облачных услуг
+- [Яндекс.Метрика](https://metrika.yandex.ru/) - Сервис веб-аналитики
+- [Яндекс.Вебмастер](https://webmaster.yandex.ru/) - Сервис для вебмастеров
+
 
 ## ✍️ Разработчики <a name = "authors"></a>
 
 - [@kaurcev](https://github.com/kaurcev) - Главный разработчик
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+Остальные разработчики, внесшие вклад в развитик проекта указаны [тут](https://github.com/kylelobo/The-Documentation-Compendium/contributors). Внесите свой вклад и попадите в список :)
 
-## 🎉 Благодарства <a name = "acknowledgement"></a>
+## 🎉 Благодарности <a name = "acknowledgement"></a>
 
-- Только мне
+- Стань перым
