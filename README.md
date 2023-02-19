@@ -22,6 +22,8 @@
 ## 🧐 О проекте <a name = "about"></a>
 
 Это репозиторий моего личного сайта :)
+
+[<img src="https://mini.s-shot.ru/1920x1080/1080/png/?https://beta.kaurcev.tk/">](https://beta.kaurcev.tk)
  
 ## 🔧 Начало тестирования <a name = "tests">kaurcev.tk</a>
 
