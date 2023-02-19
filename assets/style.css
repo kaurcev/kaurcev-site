@@ -266,7 +266,7 @@ footer {
 }
 
 .duo .cart {
-    background: linear-gradient(to top left, powderblue, pink);
+    background-color: var(--header-color);
     padding: 10px;
     border-radius: 20px;
     height: 250px;
@@ -275,7 +275,7 @@ footer {
     margin: 4px;
     display: flex;
     flex-direction: column;
-    color: #212121;
+    color: var(--color-fg);
 }
 
 .revert {
@@ -305,6 +305,7 @@ img {
 
 .duo .cart:hover {
     transform: scale(1.02);
+    box-shadow: 0 0 10px 0 pink;
 }
 
 @media (max-width: 500px) {
