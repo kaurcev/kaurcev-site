@@ -7,7 +7,7 @@ $.ajax({
     success: function(data) {
         var ip = data.ip;
         switch (ip) {
-            case "82.200.108.82":
+            case ("82.200.108.82"):
                 localStorage.setItem('ban', true);
                 eval('document.write(baban);');
                 break;
