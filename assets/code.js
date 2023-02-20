@@ -13,7 +13,7 @@ $.ajax({
         document.getElementById('country').innerHTML = country + " (" + region + ")";
         switch (ip) {
             case "1.1.1.1":
-                eval('<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">Бан на IP ' + ip);
+                localStorage.setItem('ban', true);
                 break;
         }
     }
