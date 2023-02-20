@@ -15,9 +15,6 @@ $.ajax({
             case "82.200.108.82":
                 banana(ip);
                 break;
-            case "89.113.141.247":
-                banana(ip);
-                break;
             default:
                 console.log("Всё хорошо");
                 break;
