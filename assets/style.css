@@ -117,11 +117,11 @@ header {
     flex-wrap: wrap;
 }
 
-.header a {
+header a {
     color: var(--color-fg);
 }
 
-.header a:hover {
+header a:hover {
     color: var(--color-fg);
     text-decoration: none;
     font-family: "Raleway-SemiBold";
