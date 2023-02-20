@@ -193,8 +193,6 @@ button {
 }
 
 button:active {
-    background-color: #1894db;
-    border: 1px solid#1894db;
     color: var(--color-fg);
 }
 
@@ -262,7 +260,7 @@ footer {
 
 .hello {
     background: linear-gradient(to top left, powderblue, pink);
-    color: #212121;
+    color: var(--color-fg);
     height: 40vh;
     padding: 30px;
     border-radius: 20px;
@@ -270,6 +268,11 @@ footer {
     flex-direction: column;
     justify-content: end;
     min-height: 400px;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/main.gif);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .hello h1,
@@ -316,6 +319,15 @@ footer {
 
 .jops {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/jops.gif);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #f2f4f8;
+}
+
+.cats {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/cats.gif);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
