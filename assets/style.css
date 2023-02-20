@@ -175,15 +175,17 @@ main {
 }
 
 button {
-    background-color: #1cacff;
-    border: 1px solid #1cacff;
+    background: linear-gradient(to top left, powderblue, pink);
+    border: none;
     border-radius: 6px;
     font-size: 16px;
+    width: 100%;
+    max-width: 200px;
     min-width: 100px;
     font-weight: 800;
-    padding: 5px 10px 5px 10px;
+    padding: 10px 15px 10px 15px;
     font-family: "Raleway-SemiBold";
-    color: var(--color-fg);
+    color: var(--header-color);
 }
 
 button:active {
@@ -286,8 +288,32 @@ footer {
     background-size: cover;
 }
 
+.maps {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/maps.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .revert {
     flex-wrap: wrap-reverse;
+}
+
+.rang {
+    width: fit-content;
+}
+
+.nav {
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #f2f4f8;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
 }
 
 .duo div {
