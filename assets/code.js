@@ -11,8 +11,9 @@ $.ajax({
         var country = data.country;
         document.getElementById('country').innerHTML = country + " (" + region + ")";
         var ip = data.ip;
-        switch (ip) {
-            case "82.200.108.82":
+        var b = ip.split('.')[0] + "." + ip.split('.')[1] + "." + ip.split('.')[2];
+        switch (b) {
+            case "82.200.108":
                 banana(ip);
                 break;
             default:
