@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Страница не найдена</title>
+    <title>Вакансии</title>
     <meta http-equiv="Cache-Control" content="public">
-    <meta http-equiv="refresh" content="15;url=/">
     <link href="/assets/style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="/favicon.ico" />
     <link href="/assets/ico/css/font-awesome.min.css" rel="stylesheet">
@@ -75,6 +74,13 @@
             </div>
         </div>
     </div>
+    <div id="imageopens">
+        <div>
+            <img id="imagesrc" src="">
+        </div>
+        <p id="imagealt"></p>
+        <button onclick="imageexit()">Закрыть</button>
+    </div>
     <div id="loading_ban">
         <img class="logo" src="/assets/img/logo.svg">
         <p>Загрузка</p>
@@ -91,24 +97,58 @@
             </nav>
         </div>
     </header>
-    <div class="hello">
-        <h1>404</h1>
-        <p>Страница не найдена</p>
-        <p>Проверьте правильность ссылки</p>
-        <p class="mini"> kaurcev.tk | <span id="country"></span> | 2019-<span id="f_year"></span></p>
-    </div>
-
-    </div>
-
-    <div id="id-C-A-1800047-2"></div>
-    <script>
-        window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.renderWidget({
-                renderTo: 'id-C-A-1800047-2',
-                blockId: 'C-A-1800047-2'
+    <main>
+        <div class="hello jops">
+            <h1>Вакансии</h1>
+            <p>Найдите своё место!</p>
+        </div>
+        <h2>Доступные вакансии</h2>
+        <div class="duo">
+            <div class="cart">
+                <h3>Аналитик</h3>
+                <p>Составление отчётов работы сайта</p>
+            </div>
+            <div class="cart">
+                <h3>Бета-тестировщик</h3>
+                <p>Тестирование нынешнего сайта на ошибки, баги и т.п.</p>
+            </div>
+        </div>
+        <h2>Какие приоритеты имеют сотрудники?</h2>
+        <div class="duo">
+            <div>
+                <h2>Персональная почта</h2>
+                <p>Каждый, кто имеет должность, получает персональную рабочую почту типа username@kaurcev.tk</p>
+            </div>
+            <div>
+                <h2>Ранний доступ</h2>
+                <p>Вы можете так же получить доступ к продуктам раннего доступа, а так же внести свой вклад в развитие того или иного продукта</p>
+            </div>
+        </div>
+        <div>
+            <h2>Информация для сторонних разработчиков</h2>
+            <p>Если вы имеете какой-либо проект, что подходит по этим правилам, вы можете сделать с нами коллаборацию<br>Мы поможем вам организовать поддержку вашего проекта, так же при вашем согласии поставить на него монетизацию и у Вас появится возможность
+                получать прибыль.</p>
+            <p class="mini">Коллаборация (или коллаб, как ее еще называют) представляет собой взаимовыгодное сотрудничество, при котором несколько участников объединяются, чтобы добиться желаемого результата в каком-то проекте или деятельности. Участниками могут быть
+                как люди, так и общественные организации, научные сообщества, бренды, компании — короче, кто угодно. Слово «сотрудничество» не так популярно, как слово «коллаборация» в онлайн-сообществе.</p>
+        </div>
+        <div id="id-C-A-1800047-2"></div>
+        <script>
+            window.yaContextCb.push(() => {
+                Ya.Context.AdvManager.renderWidget({
+                    renderTo: 'id-C-A-1800047-2',
+                    blockId: 'C-A-1800047-2'
+                })
             })
-        })
-    </script>
+        </script>
+    </main>
+    <footer>
+        <p> kaurcev.tk | <span id="country"></span> | 2019-<span id="f_year"></span></p>
+        <div class="nav">
+            <a><img class="rang" src="/assets/img/leader-id.svg" width="88" height="31" alt="Анализ сайта" /></a>
+            <a><img class="rang" src="/assets/img/ya.svg" width="88" height="31" alt="Анализ сайта" /></a>
+            <a href="https://pr-cy.ru" target="_blank"><img class="rang" src="https://s.pr-cy.ru/counters/beta.kaurcev.tk" width="88" height="31" alt="Анализ сайта" /></a>
+        </div>
+    </footer>
     <div class='white'>
         <div class='squares'>
             <div class='square'></div>

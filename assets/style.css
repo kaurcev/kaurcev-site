@@ -314,6 +314,15 @@ footer {
     background-size: cover;
 }
 
+.jops {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/jops.gif);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #f2f4f8;
+}
+
 .revert {
     flex-wrap: wrap-reverse;
 }
