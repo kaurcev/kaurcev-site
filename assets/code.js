@@ -27,7 +27,7 @@ function onloading() {
         imageopen(this.src, this.alt)
     });
     */
-
+    console.log(navigator);
 }
 
 function imageopen(src, alt) {
