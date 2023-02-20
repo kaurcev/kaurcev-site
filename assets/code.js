@@ -1,3 +1,7 @@
+if ((window.location.host = 'beta.kaurcev.tk') || (window.location.host == '127.0.0.1:3000')) {
+    window.location.href = 'https://google.com'
+}
+
 var year = document.getElementById("f_year");
 if (year != null) {
     year.innerHTML = new Date().getFullYear();
