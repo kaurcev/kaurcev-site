@@ -268,11 +268,6 @@ footer {
     flex-direction: column;
     justify-content: end;
     min-height: 400px;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/main.gif);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 
 .hello h1,
