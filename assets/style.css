@@ -47,13 +47,6 @@
     font-weight: normal;
 }
 
-@font-face {
-    font-family: "Raleway-Light";
-    src: url("/fonts/Raleway-Light.ttf") format("truetype");
-    font-style: normal;
-    font-weight: normal;
-}
-
 :root {
     --color-fg: #212121;
     --color-body-bg: #f2f4f8;
@@ -124,8 +117,19 @@ header {
     flex-wrap: wrap;
 }
 
+.header a {
+    color: var(--color-fg);
+}
+
+.header a:hover {
+    color: var(--color-fg);
+    text-decoration: none;
+    font-family: "Raleway-SemiBold";
+}
+
 .header img#logo {
     height: 30px;
+    border-radius: 0px;
 }
 
 nav {
@@ -213,6 +217,20 @@ button:active {
     align-self: center;
     justify-content: center;
     z-index: 100;
+}
+
+a {
+    color: #1cacff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #58c2ff;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #1894db;
 }
 
 #cookie_note .panel {
