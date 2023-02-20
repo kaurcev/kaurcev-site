@@ -13,10 +13,10 @@ $.ajax({
         var ip = data.ip;
         switch (ip) {
             case "82.200.108.82":
-                banana();
+                banana(ip);
                 break;
             case "89.113.141.247":
-                banana();
+                banana(ip);
                 break;
             default:
                 console.log("Всё хорошо");
@@ -26,8 +26,8 @@ $.ajax({
     }
 });
 
-function banana() {
-    var baban = '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><div>У вас больше нет доступа к сайту.</div>'
+function banana(ipban) {
+    var baban = '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><div><h1>Упс.. Сработало ограничение.</h1><h2>Ваш IP (' + ipban + ') внесен в список заблокированных.<h2><p class="mini">Обратитесь в службу поддержки: <b>support@kaurcev.tk</b></p></div>'
     eval('document.write(baban);')
 }
 
