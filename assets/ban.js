@@ -14,7 +14,3 @@ $.ajax({
         }
     }
 });
-
-if (localStorage.getItem('ban') == true) {
-    eval('document.write(baban);');
-}
