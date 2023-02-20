@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Страница не найдена</title>
+    <title>Связаться</title>
 
     <meta http-equiv="Cache-Control" content="public">
-    <meta http-equiv="refresh" content="15;url=/">
     <link href="/assets/style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="/favicon.ico" />
     <link href="/assets/ico/css/font-awesome.min.css" rel="stylesheet">
@@ -34,7 +33,7 @@
     <script>
         window.yaContextCb = window.yaContextCb || []
     </script>
-    <script src="https://yandex.ru/ads/system/context.js" async="async"></script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
     <script src="https://ezstat.ru/maina.js"></script>
     <script type="application/ld+json">
         {
@@ -87,32 +86,52 @@
         <div class="header">
             <a href="/"><img id="logo" src="/assets/img/logo.svg"></a>
             <nav>
-                <nav>
-                    <a href="/me">Обо мне</a>
-                    <a href="/certificates">Сертификаты</a>
-                    <a href="/contact">Связаться</a>
-                </nav>
+                <a href="/me">Обо мне</a>
+                <a href="/certificates">Сертификаты</a>
+                <a href="/contact">Связаться</a>
             </nav>
         </div>
     </header>
-    <div class="hello">
-        <h1>404</h1>
-        <p>Страница не найдена</p>
-        <p>Проверьте правильность ссылки</p>
-        <p class="mini"> kaurcev.tk | <span id="country"></span> | 2019-<span id="f_year"></span></p>
-    </div>
+    <main>
+        <div class="hello">
+            <h1>Связаться</h1>
+            <p>Можете прочитать</p>
+        </div>
+        <form name="contact" action="/info/success" method="POST" data-netlify="true">
+            <p>
+                <label>Ваше имя: <br><input type="text" name="name" /></label>
+            </p>
+            <p>
+                <label>Ваш Email: <br><input type="email" name="email" /></label>
+            </p>
+            <p>
+                <label>Ваше сообщение: <br><textarea name="message"></textarea></label>
+            </p>
+            <p>
+                <button type="submit">Отправить</button>
+            </p>
+            <p class="mini">Ожидайте ответ от alexsandr@kaurcev.tk</p>
 
-    </div>
+        </form>
 
-    <div id="id-C-A-1800047-2"></div>
-    <script>
-        window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.renderWidget({
-                renderTo: 'id-C-A-1800047-2',
-                blockId: 'C-A-1800047-2'
+        <div id="id-C-A-1800047-2"></div>
+        <script>
+            window.yaContextCb.push(() => {
+                Ya.Context.AdvManager.renderWidget({
+                    renderTo: 'id-C-A-1800047-2',
+                    blockId: 'C-A-1800047-2'
+                })
             })
-        })
-    </script>
+        </script>
+    </main>
+    <footer>
+        <p> kaurcev.tk | <span id="country"></span> | 2019-<span id="f_year"></span></p>
+        <div class="nav">
+            <a><img class="rang" src="/assets/img/leader-id.svg" width="88" height="31" alt="Анализ сайта" /></a>
+            <a><img class="rang" src="/assets/img/ya.svg" width="88" height="31" alt="Анализ сайта" /></a>
+            <a href="https://pr-cy.ru" target="_blank"><img class="rang" src="https://s.pr-cy.ru/counters/beta.kaurcev.tk" width="88" height="31" alt="Анализ сайта" /></a>
+        </div>
+    </footer>
     <div class='white'>
         <div class='squares'>
             <div class='square'></div>
@@ -138,7 +157,7 @@
                     return;
                 }
             }
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = "async" = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
         })
         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 

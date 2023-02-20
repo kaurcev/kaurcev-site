@@ -181,7 +181,7 @@ main {
 button {
     background: linear-gradient(to top left, powderblue, pink);
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     font-size: 16px;
     width: 100%;
     max-width: 200px;
@@ -194,6 +194,48 @@ button {
 
 button:active {
     color: var(--color-fg);
+}
+
+input {
+    background: var(--header-color);
+    border: 2px solid pink;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 100px;
+    font-weight: 800;
+    padding: 10px 15px 10px 15px;
+    font-family: "Raleway-SemiBold";
+    color: var(--header-color);
+    outline: none;
+}
+
+textarea {
+    background: var(--header-color);
+    border: 2px solid pink;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 100px;
+    font-weight: 800;
+    padding: 10px 15px 10px 15px;
+    font-family: "Raleway-SemiBold";
+    color: var(--header-color);
+    outline: none;
+}
+
+form {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    min-width: 100px;
+}
+
+form button {
+    width: 100%;
+    max-width: 400px;
 }
 
 #cookie_note.show {
@@ -260,7 +302,7 @@ footer {
 
 .hello {
     background: linear-gradient(to top left, powderblue, pink);
-    color: var(--color-fg);
+    color: #212121;
     height: 40vh;
     padding: 30px;
     border-radius: 20px;

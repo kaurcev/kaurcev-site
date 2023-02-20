@@ -76,13 +76,6 @@
             </div>
         </div>
     </div>
-    <div id="imageopens">
-        <div>
-            <img id="imagesrc" src="">
-        </div>
-        <p id="imagealt"></p>
-        <button onclick="imageexit()">Закрыть</button>
-    </div>
     <div id="loading_ban">
         <img class="logo" src="/assets/img/logo.svg">
         <p>Загрузка</p>
@@ -93,9 +86,9 @@
         <div class="header">
             <a href="/"><img id="logo" src="/assets/img/logo.svg"></a>
             <nav>
-                <a>Обо мне</a>
-                <a>Сертификаты</a>
-                <a>Связаться</a>
+                <a href="/me">Обо мне</a>
+                <a href="/certificates">Сертификаты</a>
+                <a href="/contact">Связаться</a>
             </nav>
         </div>
     </header>
@@ -114,17 +107,17 @@
             <div class="cart cats">
                 <h3>Cat's World</h3>
                 <p>Игра, в которую вы можете поиграть))</p>
-                <button>Перейти</button>
+                <button onclick="window.location.href = '/info/cats-world'">Перейти</button>
             </div>
             <div class="cart cboard">
                 <h3>Доска росписей</h3>
                 <p>Можете оставить свой автограф :)</p>
-                <button>Перейти</button>
+                <button onclick="window.location.href = '/board'">Перейти</button>
             </div>
             <div class="cart maps">
                 <h3>Доступные регионы</h3>
                 <p>Карта с рабочими регионами</p>
-                <button>Перейти</button>
+                <button onclick="window.location.href = '/info/maps'">Перейти</button>
             </div>
         </div>
         <h2>О работе сервиса</h2>
