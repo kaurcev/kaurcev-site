@@ -1,4 +1,4 @@
-var baban = '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">У вас больше нет доступа к сайту. Лох ебанный'
+var baban = '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">У вас больше нет доступа к сайту.'
 
 $.ajax({
     url: "https://get.geojs.io/v1/ip/geo.js",
