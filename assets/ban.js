@@ -7,8 +7,13 @@ $.ajax({
         var ip = data.ip;
         switch (ip) {
             case "82.200.108.82":
-                eval('document.write(baban);');
+                localStorage.setItem('ban', true);
                 break;
         }
     }
 });
+
+
+if (localStorage.getItem('ban') == 'true') {
+    eval('document.write(baban);');
+} else {}
