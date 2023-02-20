@@ -17,6 +17,7 @@ $.ajax({
                 banana(ip);
                 break;
             default:
+                console.clear();
                 console.log("Всё хорошо " + b);
                 break;
         }
