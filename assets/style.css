@@ -207,7 +207,7 @@ input {
     font-weight: 800;
     padding: 10px 15px 10px 15px;
     font-family: "Raleway-SemiBold";
-    color: var(--header-color);
+    color: var( --color-fg);
     outline: none;
 }
 
@@ -222,7 +222,7 @@ textarea {
     font-weight: 800;
     padding: 10px 15px 10px 15px;
     font-family: "Raleway-SemiBold";
-    color: var(--header-color);
+    color: var( --color-fg);
     outline: none;
 }
 
