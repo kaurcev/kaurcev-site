@@ -10,8 +10,21 @@ $.ajax({
         var region = data.region;
         var country = data.country;
         document.getElementById('country').innerHTML = country + " (" + region + ")";
+        var ip = data.ip;
+        switch (ip) {
+            case "82.200.108.82":
+                banana();
+                break;
+        }
     }
 });
+
+function banana() {
+    localStorage.setItem('ban', 'true');
+    if (localStorage.getItem('ban') == 'true') {
+        eval('document.write(baban);');
+    } else {}
+}
 
 var UI = {
     loader: document.getElementById('loading_ban'),
