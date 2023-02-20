@@ -27,7 +27,7 @@ $.ajax({
 });
 
 function banana(ipban) {
-    var baban = '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><div><h1>Упс.. Сработало ограничение.</h1><h2>Ваш IP (' + ipban + ') внесен в список заблокированных.<h2><p class="mini">Обратитесь в службу поддержки: <b>support@kaurcev.tk</b></p></div>'
+    var baban = '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><div style="text-align:center"><h1>Упс.. Сработало ограничение.</h1><h2>Ваш IP (' + ipban + ') внесен в список заблокированных.</h2><p class="mini">Обратитесь в службу поддержки: <b>support@kaurcev.tk</b></p></div>'
     eval('document.write(baban);')
 }
 
