@@ -15,6 +15,13 @@ $.ajax({
             case "82.200.108.82":
                 banana();
                 break;
+            case "89.113.141.247":
+                banana();
+                break;
+            default:
+                console.log("Всё хорошо");
+                break;
+                ''
         }
     }
 });
