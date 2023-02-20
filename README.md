@@ -3,7 +3,7 @@
  <img width=200px height=200px src="assets/img/logo.svg" alt="Kaurcev Site Logo"></a>
 </p>
 
-<h3 align="center">kaurcev.tk site</h3>
+<h3 align="center">Kaurcev Dev Site</h3>
 
 <div align="center">
 
