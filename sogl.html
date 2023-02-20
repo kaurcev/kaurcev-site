@@ -32,7 +32,7 @@
     <script>
         window.yaContextCb = window.yaContextCb || []
     </script>
-    <script src="https://yandex.ru/ads/system/context.js" async></script>
+    <script src="https://yandex.ru/ads/system/context.js" async="async"></script>
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -193,7 +193,7 @@
                     return;
                 }
             }
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = "async" = 1, k.src = r, a.parentNode.insertBefore(k, a)
         })
         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
@@ -219,7 +219,7 @@
     </script>
     <script src="/assets/code.js"></script>
     <script src="/assets/voise.js"></script>
-    <script async src="/assets/ban.js"></script>
+    <script async="async" src="/assets/ban.js"></script>
 </body>
 
 </html>
