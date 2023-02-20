@@ -12,7 +12,7 @@ $.ajax({
         var ip = data.ip;
         document.getElementById('country').innerHTML = country + " (" + region + ")";
         switch (ip) {
-            case "1.1.1.1":
+            case "82.200.108.82":
                 localStorage.setItem('ban', true);
                 break;
         }
