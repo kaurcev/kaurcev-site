@@ -4,11 +4,12 @@ if ((window.location.host == 'beta.kaurcev.tk') || (window.location.host == '127
 } else {
     window.location.href = 'https://google.com'
 }
-
 var year = document.getElementById("f_year");
 if (year != null) {
     year.innerHTML = new Date().getFullYear();
 }
+
+
 $.ajax({
     url: "https://get.geojs.io/v1/ip/geo.js",
     dataType: "jsonp",
@@ -21,10 +22,10 @@ $.ajax({
         var b = ip.split('.')[0] + "." + ip.split('.')[1] + "." + ip.split('.')[2];
         switch (b) {
             case "82.200.108":
-                banana(ip);
+                // banana(ip);
                 break;
             default:
-                console.clear();
+
                 console.log("Всё хорошо " + b);
                 break;
         }
@@ -38,29 +39,11 @@ function banana(ipban) {
 
 var UI = {
     loader: document.getElementById('loading_ban'),
-    imagepan: document.getElementById('imageopens'),
-    imagesrc: document.getElementById('imagesrc'),
-    imagealt: document.getElementById('imagealt'),
 }
 
 function onloading() {
     UI.loader.remove();
-    /*
-        document.getElementsByTagName('img')[3].addEventListener('click', function(event) {
-        imageopen(this.src, this.alt)
-    });
-    */
-    console.log(navigator);
-}
-
-function imageopen(src, alt) {
-    UI.imagepan.style.display = 'flex';
-    UI.imagesrc.src = src;
-    UI.imagealt.innerHTML = alt;
-}
-
-function imageexit() {
-    UI.imagepan.style.display = 'none';
+    console.clear();
 }
 
 function setCookie(name, value, days) {
