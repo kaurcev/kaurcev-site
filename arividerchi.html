@@ -97,13 +97,14 @@
     <main>
         <center>
             <h1>Порция музыкального кринге</h1>
+            <div class="duo">
+                <div><img onclick="sasa()" src="/assets/img/dancer.gif"></div>
+            </div>
+            <p>Нажмите на кота <b>ОДИН</b> раз :)</p>
         </center>
-        <div class="duo">
-            <div><img src="/assets/img/dancer.gif"></div>
-        </div>
+
     </main>
 
-    <audio src='/assets/back.mp3' autoplay='autoplay' loop='loop'></audio>
     <div id="id-C-A-1800047-2"></div>
     <script>
         window.yaContextCb.push(() => {
@@ -127,6 +128,12 @@
             <div class='square'></div>
         </div>
     </div>
+    <script>
+        function sasa() {
+            var audio = new Audio('/assets/back.mp3');
+            audio.play();
+        }
+    </script>
     <script>
         (function(m, e, t, r, i, k, a) {
             m[i] = m[i] || function() {
