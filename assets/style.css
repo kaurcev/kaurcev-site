@@ -325,6 +325,11 @@ footer {
     flex-wrap: wrap;
 }
 
+.infobar {
+    width: 100%;
+    height: 40vh;
+}
+
 .duo .cart {
     background-color: #1cacff;
     padding: 10px;
