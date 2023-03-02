@@ -434,6 +434,7 @@ img {
 video {
     width: 90%;
     max-width: 700px;
+    border-radius: 20px;
     height: fit-content;
 }
 
