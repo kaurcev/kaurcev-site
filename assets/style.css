@@ -427,6 +427,16 @@ img {
     border-radius: 20px;
 }
 
+.center {
+    text-align: center;
+}
+
+video {
+    width: 90%;
+    max-width: 700px;
+    height: fit-content;
+}
+
 .duo div img {
     width: 100%;
     max-width: 400px;
