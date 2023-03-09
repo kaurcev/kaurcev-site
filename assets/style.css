@@ -427,6 +427,11 @@ img {
     border-radius: 20px;
 }
 
+iframe {
+    width: 100%;
+    height: 40vh;
+}
+
 .center {
     text-align: center;
 }
