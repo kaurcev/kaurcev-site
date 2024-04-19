@@ -1,4 +1,4 @@
-if ((window.location.host == 'beta.kaurcev.tk') || (window.location.host == '127.0.0.1:3000')) {
+if ((window.location.host == 'feraline.kaurcev.space') || (window.location.host == '127.0.0.1:3000')) {
     console.clear();
     console.log("Всё хорошо ");
 } else {
