@@ -2,7 +2,7 @@ if ((window.location.host == 'feraline.kaurcev.space') || (window.location.host 
     console.clear();
     console.log("Всё хорошо ");
 } else {
-    window.location.href = 'https://google.com'
+   // window.location.href = 'https://google.com'
 }
 var year = document.getElementById("f_year");
 if (year != null) {
