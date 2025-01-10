@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>WebRTC Chat</title>
+    <style>
+        #log {
+            border: 1px solid #ccc;
+            height: 150px;
+            overflow-y: scroll;
+            margin-top: 10px;
+            padding: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
     <script>
         let localPeerConnection;
         let remotePeerConnection;
@@ -11,7 +21,7 @@
 
         async function register() {
             sessionId = Math.random().toString(36).substring(2);
-            console.log("Регистрация с sessionId:", sessionId);
+            logMessage("Регистрация с sessionId: " + sessionId);
             await fetch('https://clicker.miac.tech/chat.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -21,52 +31,67 @@
         }
 
         async function startChat() {
-            const configuration = { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] };
+            const configuration = { 
+                iceServers: [
+                    { urls: 'stun:stun.l.google.com:19302' },
+                    { urls: 'stun:stun1.l.google.com:19302' },
+                    { urls: 'stun:stun2.l.google.com:19302' }
+                ] 
+            };
             localPeerConnection = new RTCPeerConnection(configuration);
             remotePeerConnection = new RTCPeerConnection(configuration);
 
             dataChannel = localPeerConnection.createDataChannel("chat");
 
             dataChannel.onopen = () => {
-                console.log("Канал данных открыт");
+                logMessage("Канал данных открыт (локальный)");
                 document.getElementById('sendButton').disabled = false; // активация кнопки отправки
             };
 
             dataChannel.onmessage = (event) => {
-                console.log("Получено сообщение:", event.data);
+                logMessage("Получено сообщение: " + event.data);
                 document.getElementById('chat').innerHTML += `<div>${event.data}</div>`;
             };
 
             remotePeerConnection.ondatachannel = (event) => {
                 const remoteDataChannel = event.channel;
+                
                 remoteDataChannel.onmessage = (event) => {
-                    console.log("Получено сообщение от удаленного канала:", event.data);
+                    logMessage("Получено сообщение от удаленного канала: " + event.data);
                     document.getElementById('chat').innerHTML += `<div>${event.data}</div>`;
                 };
 
                 remoteDataChannel.onopen = () => {
-                    console.log("Удаленный канал данных открыт");
+                    logMessage("Удаленный канал данных открыт");
                     document.getElementById('sendButton').disabled = false; // активация кнопки отправки
+                };
+
+                remoteDataChannel.onclose = () => {
+                    logMessage("Удаленный канал данных закрыт");
                 };
             };
 
             localPeerConnection.onicecandidate = (event) => {
                 if (event.candidate) {
-                    console.log("Отправка ICE-кандидата:", event.candidate);
+                    logMessage("Отправка ICE-кандидата: " + event.candidate);
                     sendSignal({ type: 'ice', candidate: event.candidate });
+                } else {
+                    logMessage("ICE-кандидат завершен (no more candidates)");
                 }
             };
 
             remotePeerConnection.onicecandidate = (event) => {
                 if (event.candidate) {
-                    console.log("Отправка ICE-кандидата:", event.candidate);
+                    logMessage("Отправка ICE-кандидата: " + event.candidate);
                     sendSignal({ type: 'ice', candidate: event.candidate });
+                } else {
+                    logMessage("ICE-кандидат завершен (no more candidates)");
                 }
             };
 
             const offer = await localPeerConnection.createOffer();
             await localPeerConnection.setLocalDescription(offer);
-            console.log("Отправка предложения:", offer);
+            logMessage("Отправка предложения: " + JSON.stringify(offer));
             sendSignal({ type: 'offer', offer });
         }
 
@@ -85,31 +110,41 @@
             const signals = await response.json();
             signals.forEach(async (signal) => {
                 if (signal.type === 'offer') {
-                    console.log("Получено предложение:", signal.offer);
+                    logMessage("Получено предложение: " + signal.offer);
                     await remotePeerConnection.setRemoteDescription(new RTCSessionDescription(signal.offer));
                     const answer = await remotePeerConnection.createAnswer();
                     await remotePeerConnection.setLocalDescription(answer);
-                    console.log("Отправка ответа:", answer);
+                    logMessage("Отправка ответа: " + answer);
                     sendSignal({ type: 'answer', answer });
                 } else if (signal.type === 'answer') {
-                    console.log("Получен ответ:", signal.answer);
+                    logMessage("Получен ответ: " + signal.answer);
                     await localPeerConnection.setRemoteDescription(new RTCSessionDescription(signal.answer));
                 } else if (signal.type === 'ice') {
-                    console.log("Получен ICE-кандидат:", signal.candidate);
-                    await remotePeerConnection.addIceCandidate(new RTCIceCandidate(signal.candidate));
+                    logMessage("Получен ICE-кандидат: " + signal.candidate);
+                    if (signal.candidate) {
+                        await remotePeerConnection.addIceCandidate(new RTCIceCandidate(signal.candidate));
+                    } else {
+                        logMessage("Получен пустой ICE-кандидат");
+                    }
                 }
             });
         }
 
         function sendMessage() {
-            if (dataChannel.readyState === 'open') {
+            if (dataChannel && dataChannel.readyState === 'open') {
                 const message = document.getElementById('message').value;
                 dataChannel.send(message);
-                console.log("Отправлено сообщение:", message);
+                logMessage("Отправлено сообщение: " + message);
                 document.getElementById('message').value = '';
             } else {
-                console.error("Канал данных не открыт. Сообщение не отправлено.");
+                logMessage("Канал данных не открыт. Сообщение не отправлено.");
             }
+        }
+
+        function logMessage(message) {
+            const logContainer = document.getElementById('log');
+            logContainer.innerHTML += `<div>${message}</div>`;
+            logContainer.scrollTop = logContainer.scrollHeight; // Прокрутка вниз
         }
     </script>
 </head>
@@ -117,5 +152,6 @@
     <div id="chat" style="border: 1px solid #ccc; height: 300px; overflow-y: scroll;"></div>
     <input type="text" id="message" placeholder="Введите сообщение">
     <button id="sendButton" onclick="sendMessage()" disabled>Отправить</button>
+    <div id="log"></div> <!-- Элемент для отображения логов -->
 </body>
 </html>
