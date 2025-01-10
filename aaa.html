@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>WebRTC Chat</title>
+    <script>
+        let localPeerConnection;
+        let remotePeerConnection;
+        let dataChannel;
+        let sessionId;
+
+        async function register() {
+            sessionId = Math.random().toString(36).substring(2);
+            console.log("Регистрация с sessionId:", sessionId);
+            await fetch('https://clicker.miac.tech/chat.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ type: 'register', sessionId }),
+            });
+            startChat();
+        }
+
+        async function startChat() {
+            const configuration = { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] };
+            localPeerConnection = new RTCPeerConnection(configuration);
+            remotePeerConnection = new RTCPeerConnection(configuration);
+
+            dataChannel = localPeerConnection.createDataChannel("chat");
+
+            dataChannel.onopen = () => {
+                console.log("Канал данных открыт");
+                document.getElementById('sendButton').disabled = false; // активация кнопки отправки
+            };
+
+            dataChannel.onmessage = (event) => {
+                console.log("Получено сообщение:", event.data);
+                document.getElementById('chat').innerHTML += `<div>${event.data}</div>`;
+            };
+
+            remotePeerConnection.ondatachannel = (event) => {
+                const remoteDataChannel = event.channel;
+                remoteDataChannel.onmessage = (event) => {
+                    console.log("Получено сообщение от удаленного канала:", event.data);
+                    document.getElementById('chat').innerHTML += `<div>${event.data}</div>`;
+                };
+
+                remoteDataChannel.onopen = () => {
+                    console.log("Удаленный канал данных открыт");
+                    document.getElementById('sendButton').disabled = false; // активация кнопки отправки
+                };
+            };
+
+            localPeerConnection.onicecandidate = (event) => {
+                if (event.candidate) {
+                    console.log("Отправка ICE-кандидата:", event.candidate);
+                    sendSignal({ type: 'ice', candidate: event.candidate });
+                }
+            };
+
+            remotePeerConnection.onicecandidate = (event) => {
+                if (event.candidate) {
+                    console.log("Отправка ICE-кандидата:", event.candidate);
+                    sendSignal({ type: 'ice', candidate: event.candidate });
+                }
+            };
+
+            const offer = await localPeerConnection.createOffer();
+            await localPeerConnection.setLocalDescription(offer);
+            console.log("Отправка предложения:", offer);
+            sendSignal({ type: 'offer', offer });
+        }
+
+        async function sendSignal(message) {
+            message.sessionId = sessionId;
+            await fetch('https://clicker.miac.tech/chat.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(message),
+            });
+            loadSignals();
+        }
+
+        async function loadSignals() {
+            const response = await fetch(`https://clicker.miac.tech/chat.php?sessionId=${sessionId}`);
+            const signals = await response.json();
+            signals.forEach(async (signal) => {
+                if (signal.type === 'offer') {
+                    console.log("Получено предложение:", signal.offer);
+                    await remotePeerConnection.setRemoteDescription(new RTCSessionDescription(signal.offer));
+                    const answer = await remotePeerConnection.createAnswer();
+                    await remotePeerConnection.setLocalDescription(answer);
+                    console.log("Отправка ответа:", answer);
+                    sendSignal({ type: 'answer', answer });
+                } else if (signal.type === 'answer') {
+                    console.log("Получен ответ:", signal.answer);
+                    await localPeerConnection.setRemoteDescription(new RTCSessionDescription(signal.answer));
+                } else if (signal.type === 'ice') {
+                    console.log("Получен ICE-кандидат:", signal.candidate);
+                    await remotePeerConnection.addIceCandidate(new RTCIceCandidate(signal.candidate));
+                }
+            });
+        }
+
+        function sendMessage() {
+            if (dataChannel.readyState === 'open') {
+                const message = document.getElementById('message').value;
+                dataChannel.send(message);
+                console.log("Отправлено сообщение:", message);
+                document.getElementById('message').value = '';
+            } else {
+                console.error("Канал данных не открыт. Сообщение не отправлено.");
+            }
+        }
+    </script>
+</head>
+<body onload="register()">
+    <div id="chat" style="border: 1px solid #ccc; height: 300px; overflow-y: scroll;"></div>
+    <input type="text" id="message" placeholder="Введите сообщение">
+    <button id="sendButton" onclick="sendMessage()" disabled>Отправить</button>
+</body>
+</html>
